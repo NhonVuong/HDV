@@ -1,0 +1,8 @@
+{
+    "ListStudent":"http://192.168.1.45/api/StudentManagement/GetListStudent",
+    "AddStudent":"http://192.168.1.45/api/StudentManagement/AddStudent",
+
+    "ListClass":"http://192.168.1.45/api/StudentManagement/GetListClass",
+
+    "ListFaculty": "http://192.168.1.45/api/StudentManagement/GetListFaculty"
+}

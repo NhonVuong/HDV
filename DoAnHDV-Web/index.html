@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhon bede</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="isHeader ub-box-1 ub-bg-white">
+        <h1>Quản lý sinh viên</h1>
+    </header>
+    <!-- end header -->
+    <div class="wrapper ub-box-1 ub-pd-1 ub-tabs" id="contentTabs">
+        <!--  -->
+        <section class="isStudent ub-tab-item active" id="isStudent">
+            <div class="ub-pd-2" style="text-align: right">
+                <button class="ub-btn create">Thêm</button>
+            </div>
+            <div>
+                <table class="ub-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>MSSV</th>
+                            <th>Lớp</th>
+                            <th>Địa Chỉ</th>
+                            <th>Giới Tính</th>
+                            <th>Tao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="item" data-index="{{Index}}">
+                            <td>{{Index}}</td>
+                            <td>{{FirstName}} {{LastName}}</td>
+                            <td>{{Id}}</td>
+                            <td>{{ClassName}}</td>
+                            <td>{{Address}}</td>
+                            <td>{{Sex}}</td>
+                            <td>
+                                <button class="ub-btn edit">Sửa</button>
+                                <button class="ub-btn del">Xoá</button>
+                            </td>
+                        </tr>
+                        <script type="text/template">
+                            {{#ListStudent}}
+                                <tr class="item" data-index="{{Index}}">
+                                    <td>{{Index}}</td>
+                                    <td>{{FirstName}} {{LastName}}</td>
+                                    <td>{{Id}}</td>
+                                    <td>{{ClassName}}</td>
+                                    <td>{{Address}}</td>
+                                    <td>{{Sex}}</td>
+                                    <td>
+                                        <button class="ub-btn edit">Sửa</button>
+                                        <button class="ub-btn del">Xoá</button>
+                                    </td>
+                                </tr>
+                            {{/ListStudent}}
+                        </script>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="isClass ub-tab-item " id="isClass">
+            <div>
+                <button class="ub-btn">Thêm</button>
+                <button class="ub-btn">Sửa</button>
+                <button class="ub-btn">Xoá</button>
+            </div>
+            <div>
+                <table class="ub-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên lớp</th>
+                            <th>Mã lớp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="isFaculty ub-tab-item " id="isFaculty">
+            <div>
+                <button class="ub-btn">Thêm</button>
+                <button class="ub-btn">Sửa</button>
+                <button class="ub-btn">Xoá</button>
+            </div>
+            <div>
+                <table class="ub-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên khoa</th>
+                            <th>Mã Khoa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <div class="isProvider">
+        <div class="menu-left ub-box-2">
+            <ul id="listProvider">
+                <li data-target="#isStudent" class="active">Sinh Viên</li>
+                <li data-target="#isClass">Lớp Học</li>
+                <li data-target="#isFaculty">Khoa</li>
+            </ul>
+        </div>
+        <div class="ub-dialog" style="display: none;" id="dialogCreateStudent">
+            <div class="ub-dialog-dark"></div>
+            <div class="ub-dialog-content ub-bg-white">
+                <h1 class="title-control">Thêm sinh viên</h1>
+                <div class="item-control">
+                    <label for="">Họ</label>
+                    <input type="text">
+                </div>
+                <div class="item-control">
+                    <label for="">Tên</label>
+                    <input type="text">
+                </div>
+
+                <div class="item-control">
+                    <label for="">Giới tính</label>
+                    <input type="radio" name="gender">Nam
+                    <input type="radio" name="gender">Nữ
+                </div>
+                <div class="item-control">
+                    <label for="">Địa chỉ</label>
+                    <input type="text">
+                </div>
+                <div class="item-control">
+                    <label for="">Lớp</label>
+                    <select name="" id="">
+                        <option value="">Công ngệ thông tin 1</option>
+                        <option value="">Công ngệ thông tin 2</option>
+                    </select>
+                </div>
+                <div class="item-control">
+                    <label for="">Khoa</label>
+                    <select name="" id="">
+                        <option value="">Công ngệ thông tin</option>
+                        <option value="">Viễn thông</option>
+                    </select>
+                </div>
+                <div style="text-align:center" class="ub-pd-1">
+                    <button class="ub-btn submit">Xác nhận</button>
+                    <button class="ub-btn destroy">Huỷ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/template" id="createStudent">
+
+    </script>
+
+    <!-- <script src="./js/model.js"></script> -->
+    <script src="./libs/jquery-3.3.1.min.js"></script>
+    <script src="./libs/mustache.min.js"></script>
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
